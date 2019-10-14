@@ -33,7 +33,7 @@ const IndexPage = ({ data }) => (
         <section className="About">
           <Container>
             <Row>
-              <Col className="about-image" xs={12} sm={4}>
+              <Col className="about-image" xs={12} sm={4} md={3} m={2}>
                 {" "}
                 <Img fixed={data.Profile.childImageSharp.fixed} alt="profile" />
               </Col>
@@ -102,7 +102,7 @@ const IndexPage = ({ data }) => (
           <div className="projects-title">Projects</div>
           <Container className="projects-description">
             <Row>
-              <Col xs={12} s={12} m={6}>
+              <Col xs={12} sm={6} md={4}>
                 <Img
                   fluid={data.project1.childImageSharp.fluid}
                   alt="project1"
@@ -110,7 +110,11 @@ const IndexPage = ({ data }) => (
               </Col>
               <Col>
                 <Row>
-                  <Col>AdTractor</Col>
+                  <Col>
+                    <a href="https://adtractor.netlify.com" target="_blank">
+                      AdTractor
+                    </a>
+                  </Col>
                 </Row>
                 <Row>
                   <Col>
@@ -123,7 +127,7 @@ const IndexPage = ({ data }) => (
               </Col>
             </Row>
             <Row>
-              <Col xs={12} s={12} m={6}>
+              <Col xs={12} sm={6} md={4}>
                 <Img
                   fluid={data.project2.childImageSharp.fluid}
                   alt="project2"
@@ -131,7 +135,14 @@ const IndexPage = ({ data }) => (
               </Col>
               <Col>
                 <Row>
-                  <Col>Shoplift</Col>
+                  <Col>
+                    <a
+                      href="https://shoplift-supermarket.firebaseapp.com"
+                      target="_blank"
+                    >
+                      Shoplift
+                    </a>
+                  </Col>
                 </Row>
                 <Row>
                   <Col>
@@ -144,7 +155,7 @@ const IndexPage = ({ data }) => (
               </Col>
             </Row>
             <Row>
-              <Col xs={12} s={12} m={6}>
+              <Col xs={12} sm={6} md={4}>
                 <Img
                   fluid={data.project3.childImageSharp.fluid}
                   alt="project3"
@@ -152,7 +163,14 @@ const IndexPage = ({ data }) => (
               </Col>
               <Col>
                 <Row>
-                  <Col>Emaily</Col>
+                  <Col>
+                    <a
+                      href="https://emailyproject.herokuapp.com"
+                      target="_blank"
+                    >
+                      Emaily
+                    </a>
+                  </Col>
                 </Row>
                 <Row style={{ paddingBottom: "0" }}>
                   <Col>
@@ -172,23 +190,25 @@ const IndexPage = ({ data }) => (
           <img
             src={cutOff2}
             alt="cutoff2"
-            style={{ margin: 0, marginTop: -4 }}
+            style={{ margin: 0, marginTop: -1 }}
           />
-          <div className="Contact-title">Contact</div>
-          <Form>
-            <Form.Control placeholder="Full name*" />
+          <Container>
+            <div className="Contact-title">Contact</div>
+            <Form>
+              <Form.Control placeholder="Full name*" />
 
-            <Form.Control placeholder="Email*" />
+              <Form.Control placeholder="Email*" />
 
-            <Form.Control as="textarea" rows="4" placeholder="Message*" />
+              <Form.Control as="textarea" rows="4" placeholder="Message*" />
 
-            <div
-              className="contact-btn-wrapper"
-              style={{ textAlign: "center" }}
-            >
-              <Button>Submit</Button>
-            </div>
-          </Form>
+              <div
+                className="contact-btn-wrapper"
+                style={{ textAlign: "center" }}
+              >
+                <Button>Submit</Button>
+              </div>
+            </Form>
+          </Container>
         </section>
       </div>
     </div>
@@ -212,21 +232,21 @@ export const query = graphql`
         }
       }
     }
-    project1: file(relativePath: { eq: "project1.png" }) {
+    project1: file(relativePath: { eq: "project1.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    project2: file(relativePath: { eq: "project2.png" }) {
+    project2: file(relativePath: { eq: "project2.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    project3: file(relativePath: { eq: "project3.png" }) {
+    project3: file(relativePath: { eq: "project3.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

@@ -1,7 +1,10 @@
-$break-xs: 480px;
+$break-xs: 576px;
 $break-sm: 768px;
 $break-m: 992px;
 $break-lg: 1200px;
+html {
+  font-size: 16px;
+}
 body {
   font-family: "roboto";
 }
@@ -23,31 +26,35 @@ body {
 }
 .Landing-title {
   color: #fff;
-  font-size: 36px;
+  font-size: 2.2em;
   margin: 16px 0;
   text-align: center;
 }
 .Landing-description {
   color: #cecece;
   text-align: center;
-  font-size: 14px;
+  font-size: 0.9em;
 }
 .About {
-  background-color: #111;
+  background-color: rgb(17, 17, 17);
   text-align: center;
   width: 100%;
   .container {
     .row {
-      padding: 68px 0 68px;
       .about-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         color: rgb(221, 221, 221);
+        font-size: 1rem;
+        padding: 0 15px 68px;
       }
       .about-image {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-bottom: 68px;
         align-items: center;
+        padding: 68px 0;
       }
     }
   }
@@ -59,7 +66,7 @@ body {
 .skills-title {
   color: rgb(221, 221, 221);
   text-align: center;
-  font-size: 50px;
+  font-size: 2.7em;
   padding: 0 68px 68px;
 }
 .skills-description {
@@ -75,11 +82,14 @@ body {
       }
       .skill {
         color: #08b8b8;
-        font-size: 25px;
+        font-size: 1.5em;
         padding: 0;
       }
       .col:last-child {
-        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 1em;
         color: rgb(221, 221, 221);
       }
     }
@@ -91,21 +101,31 @@ body {
 .projects-title {
   padding: 0 68px 68px;
   text-align: center;
-  font-size: 50px;
+  font-size: 2.7em;
   color: #026262;
 }
 .projects-description {
   padding: 0 15px 68px;
   .row {
+    padding: 15px 0;
+    .col-md-4,
+    .col-sm-6,
+    .col-12 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
     .col {
       .row:first-child {
-        color: #026262;
-        padding: 20px 0px 20px;
-        font-size: 25px;
+        a {
+          color: #026262;
+          padding: 15px 0px 15px;
+          font-size: 1.5em;
+        }
       }
       .row:last-child {
         text-align: left;
-        padding-bottom: 20px;
+        padding: 0;
       }
     }
   }
@@ -123,9 +143,9 @@ body {
   }
   form {
     margin: 0;
-    padding: 0px 15px 68px;
+    padding: 0px 0px 68px;
     .form-control:not(:first-child):not(:last-child) {
-      margin: 20px 0px 20px;
+      margin: 15px 0px 15px;
     }
     .form-control:last-child {
       height: 100px;
@@ -137,8 +157,8 @@ body {
           #058d8d 0%,
           rgba(2, 98, 98, 0) 100%
         );
-        height: 44px;
-        width: 123px;
+        height: 2.8em;
+        width: 7.7em;
         border: none;
       }
       .btn:hover,
@@ -154,35 +174,44 @@ body {
 .Contact-title {
   padding: 0 68px 68px;
   text-align: center;
-  font-size: 50px;
+  font-size: 2.7em;
   color: white;
 }
 @media screen and (min-width: $break-xs) {
   .logo-svg {
-    width: 250px;
+    width: 15em;
+  }
+  .About {
+    .container {
+      .row {
+        .about-description {
+          padding: 68px 15px 68px;
+        }
+      }
+    }
   }
 }
 @media screen and (min-width: $break-sm) {
   .logo-svg {
-    width: 300px;
+    width: 18em;
   }
   .Landing-title {
-    font-size: 36px;
+    font-size: 2.2em;
   }
   .Landing-description {
-    font-size: 16px;
+    font-size: 1em;
   }
 }
 
 @media screen and (min-width: $break-m) {
   .logo-svg {
-    width: 500px;
+    width: 30em;
   }
   .Landing-title {
-    font-size: 46px;
+    font-size: 2.8em;
   }
   .Landing-description {
-    font-size: 26px;
+    font-size: 1.5em;
   }
 }
 
@@ -191,9 +220,9 @@ body {
     width: 35vw;
   }
   .Landing-title {
-    font-size: 56px;
+    font-size: 3.5em;
   }
   .Landing-description {
-    font-size: 36px;
+    font-size: 2.2em;
   }
 }
