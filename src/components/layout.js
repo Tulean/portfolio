@@ -7,19 +7,12 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-
 import "./layout.scss"
 
 const Layout = ({ children }) => {
   return (
     <>
-      <div
-        style={{
-          margin: `0 auto`,
-          paddingTop: 0,
-          backgroundColor: "grey",
-        }}
-      >
+      <div>
         <main>{children}</main>
         <footer>
           ©{new Date().getFullYear()} Tuan Anh Le, Built with

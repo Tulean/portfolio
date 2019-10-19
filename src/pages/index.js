@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import { Row, Col, Container, Form, Button } from "react-bootstrap"
 import cutOff1 from "../images/cutoff1.svg"
 import cutOff2 from "../images/cutoff2.svg"
+import Nav from "../components/navbar"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -29,6 +30,7 @@ const IndexPage = ({ data }) => (
           <div className="Landing-description">
             Software Engineer / Front End Developer
           </div>
+          <Nav />
         </section>
         <section className="About">
           <Container>
@@ -54,7 +56,7 @@ const IndexPage = ({ data }) => (
           <div className="skills-description">
             <Container className="skills-description-title">
               <Row>
-                <Col className="skill" xs={12} sm={4}>
+                <Col className="skill" xs={12} sm={4} xlg={6}>
                   Languages
                 </Col>
                 <Col>Java, PHP, JavaScript, HTML5, CSS3</Col>
@@ -96,7 +98,7 @@ const IndexPage = ({ data }) => (
               </Row>
             </Container>
           </div>
-          <img src={cutOff1} style={{ marginBottom: -1 }} alt="cutoff1" />
+          <img src={cutOff1} alt="cutoff1" className="cutoff1" />
         </section>
         <section className="Projects">
           <div className="projects-title">Projects</div>
@@ -187,11 +189,7 @@ const IndexPage = ({ data }) => (
           </Container>
         </section>
         <section className="Contact">
-          <img
-            src={cutOff2}
-            alt="cutoff2"
-            style={{ margin: 0, marginTop: -1 }}
-          />
+          <img src={cutOff2} alt="cutoff2" className="cutoff2" />
           <Container>
             <div className="Contact-title">Contact</div>
             <Form>
