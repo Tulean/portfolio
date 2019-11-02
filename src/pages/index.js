@@ -180,7 +180,7 @@ const IndexPage = ({ data }) => (
                     Emaily is a full stack survey service that lets users send
                     out surveys to a massive amount of recipients for a certain
                     price. Emaily also collects and shows all responses to the
-                    user. Technologies used: React.js, Redux, Materializecss,
+                    user. Technologies used: React.js, Redux, MaterializeCSS,
                     SendGrid, Stripe, Node.js, MongoDB, Express.js
                   </Col>
                 </Row>

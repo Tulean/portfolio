@@ -7,8 +7,11 @@ $break-xxlg: 2560px;
 html {
   font-size: 16px;
 }
-body {
+body > * {
   font-family: "roboto";
+}
+section > * {
+  transition: font-size 1s ease-in;
 }
 .Landing {
   width: 100%;
@@ -28,7 +31,8 @@ body {
   align-items: center;
 }
 .logo-svg {
-  width: 200px;
+  width: 10em;
+  transition: 1s linear;
 }
 .Landing-title {
   color: #fff;
@@ -213,6 +217,9 @@ body {
   .cutoff2 {
     margin-top: -1px;
   }
+  .container > form {
+    padding: 0 20% 5%;
+  }
 }
 
 @media screen and (min-width: $break-m) {
@@ -220,7 +227,7 @@ body {
     width: 30em;
   }
   .Landing-title {
-    font-size: 2.3em;
+    font-size: 2.5em;
   }
   .Landing-description {
     font-size: 1.3em;
@@ -229,7 +236,7 @@ body {
 
 @media screen and (min-width: $break-lg) {
   .logo-svg {
-    width: 35vw;
+    width: 35em;
   }
   .Landing-title {
     font-size: 3em;
