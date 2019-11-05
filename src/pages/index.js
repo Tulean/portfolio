@@ -7,14 +7,15 @@ import SEO from "../components/seo"
 import { Row, Col, Container, Form, Button } from "react-bootstrap"
 import cutOff1 from "../images/cutoff1.svg"
 import cutOff2 from "../images/cutoff2.svg"
-import Nav from "../components/navbar"
+import { FaGithub, FaGlobe } from "react-icons/fa"
+import Resume from "../cv/cv.pdf"
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Portfolio" />
     <div className="Portfolio">
       <div className="Container">
-        <section className="Landing">
+        <section className="Landing" id="Landing">
           <div className="Logo">
             <svg className="logo-svg" viewBox="0 0 560 300" fill="none">
               <path
@@ -30,17 +31,12 @@ const IndexPage = ({ data }) => (
           <div className="Landing-description">
             Software Engineer / Front End Developer
           </div>
-          <Nav />
         </section>
-        <section className="About">
+        <section className="About" id="About">
+          <div className="about-title">ABOUT</div>
           <Container>
             <Row>
-              <Col className="about-image" xs={12} sm={4} md={3} m={2}>
-                {" "}
-                <Img fixed={data.Profile.childImageSharp.fixed} alt="profile" />
-              </Col>
               <Col className="about-description">
-                {" "}
                 I’m a Software Engineer, my main specialization is Frontend;
                 however, I am actively improving my Backend skills. I am also
                 interested and learning about blockchain development as well as
@@ -49,9 +45,30 @@ const IndexPage = ({ data }) => (
                 anime, and trying new adventurous activities.
               </Col>
             </Row>
+            <Row>
+              <Col className="personalLinks">
+                <a
+                  href="https://www.linkedin.com/in/tulean/"
+                  target="_blank"
+                  className="links"
+                >
+                  LinkedIn
+                </a>
+                <a href={Resume} target="_blank" className="links">
+                  Resume
+                </a>
+                <a
+                  href="https://github.com/Tulean"
+                  target="_blank"
+                  className="links"
+                >
+                  GitHub
+                </a>
+              </Col>
+            </Row>
           </Container>
         </section>
-        <section className="Skills">
+        <section className="Skills" id="Skills">
           <div className="skills-title">Skills</div>
           <div className="skills-description">
             <Container className="skills-description-title">
@@ -100,7 +117,7 @@ const IndexPage = ({ data }) => (
           </div>
           <img src={cutOff1} alt="cutoff1" className="cutoff1" />
         </section>
-        <section className="Projects">
+        <section className="Projects" id="Projects">
           <div className="projects-title">Projects</div>
           <Container className="projects-description">
             <Row>
@@ -115,6 +132,20 @@ const IndexPage = ({ data }) => (
                   <Col>
                     <a href="https://adtractor.netlify.com" target="_blank">
                       AdTractor
+                    </a>
+                    <a
+                      className="icon1"
+                      href="https://github.com/Tulean/AdTractorClient"
+                      target="_blank"
+                    >
+                      <FaGithub />
+                    </a>
+                    <a
+                      className="icon2"
+                      href="https://adtractor.netlify.com"
+                      target="_blank"
+                    >
+                      <FaGlobe />
                     </a>
                   </Col>
                 </Row>
@@ -144,6 +175,20 @@ const IndexPage = ({ data }) => (
                     >
                       Shoplift
                     </a>
+                    <a
+                      className="icon1"
+                      href="https://github.com/brucelin1218/ShopLift"
+                      target="_blank"
+                    >
+                      <FaGithub />
+                    </a>
+                    <a
+                      className="icon2"
+                      href="https://shoplift-supermarket.firebaseapp.com/"
+                      target="_blank"
+                    >
+                      <FaGlobe />
+                    </a>
                   </Col>
                 </Row>
                 <Row>
@@ -172,6 +217,20 @@ const IndexPage = ({ data }) => (
                     >
                       Emaily
                     </a>
+                    <a
+                      className="icon1"
+                      href="https://github.com/Tulean/Emaily"
+                      target="_blank"
+                    >
+                      <FaGithub />
+                    </a>
+                    <a
+                      className="icon2"
+                      href="https://emailyproject.herokuapp.com/"
+                      target="_blank"
+                    >
+                      <FaGlobe />
+                    </a>
                   </Col>
                 </Row>
                 <Row style={{ paddingBottom: "0" }}>
@@ -188,22 +247,32 @@ const IndexPage = ({ data }) => (
             </Row>
           </Container>
         </section>
-        <section className="Contact">
+        <section className="Contact" id="Contact">
           <img src={cutOff2} alt="cutoff2" className="cutoff2" />
           <Container>
             <div className="Contact-title">Contact</div>
-            <Form>
-              <Form.Control placeholder="Full name*" />
+            <Form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+            >
+              <Form.Control placeholder="Name*" name="name" />
 
-              <Form.Control placeholder="Email*" />
+              <Form.Control placeholder="Email*" name="email" />
 
-              <Form.Control as="textarea" rows="4" placeholder="Message*" />
+              <Form.Control
+                as="textarea"
+                rows="4"
+                placeholder="Message*"
+                name="message"
+              />
 
               <div
                 className="contact-btn-wrapper"
                 style={{ textAlign: "center" }}
               >
-                <Button>Submit</Button>
+                <Button type="submit">Submit</Button>
               </div>
             </Form>
           </Container>
@@ -220,13 +289,6 @@ export const query = graphql`
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    Profile: file(relativePath: { eq: "Profile.png" }) {
-      childImageSharp {
-        fixed(width: 150, height: 150) {
-          ...GatsbyImageSharpFixed
         }
       }
     }
