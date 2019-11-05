@@ -259,7 +259,7 @@ const IndexPage = ({ data }) => (
             >
               <Form.Control placeholder="Name*" name="name" />
 
-              <Form.Control placeholder="Email*" name="email" />
+              <Form.Control placeholder="Email*" name="respondTo" />
 
               <Form.Control
                 as="textarea"
