@@ -257,9 +257,9 @@ const IndexPage = ({ data }) => (
               data-netlify="true"
               netlify-honeypot="bot-field"
             >
-              <Form.Control placeholder="Name*" name="name" />
+              <Form.Control placeholder="Name*" name="name" type="text" />
 
-              <Form.Control placeholder="Email*" name="respondTo" />
+              <Form.Control placeholder="Email*" name="email" type="email" />
 
               <Form.Control
                 as="textarea"
