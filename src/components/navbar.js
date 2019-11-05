@@ -1,73 +1,94 @@
 import React, { Component } from "react"
+import { TimelineMax, Expo } from "gsap/TweenMax"
 import "./navbar.scss"
 
 class navbar extends Component {
   componentDidMount() {
-    document.addEventListener("scroll", this.heightListener)
-  }
-  heightListener = () => {
-    var nav = document.getElementsByClassName("navbar")
-    var hamburger = document.getElementsByClassName("menu-icon__line")
-    var about = document.getElementsByClassName("About")
-    var projects = document.getElementsByClassName("Projects")
-    if (window.innerWidth > 768) {
-      if (window.scrollY < about[0].offsetTop) {
-        Object.assign(nav[0].style, styles.landingNav)
-      } else if (
-        window.scrollY >= about[0].offsetTop &&
-        window.scrollY < projects[0].offsetTop
-      ) {
-        Object.assign(nav[0].style, styles.section1Nav)
-      } else if (window.scrollY >= projects[0].offsetTop) {
-        Object.assign(nav[0].style, styles.section2Nav)
+    var whiteSection = document.getElementsByClassName("Projects")
+    var t1 = new TimelineMax({ paused: true })
+    var t2 = new TimelineMax({ paused: true })
+    t1.to(".one", 0.3, {
+      y: 6,
+      rotation: 45,
+      ease: Expo.easeInOut,
+    })
+    t1.to(".two", 0.3, {
+      y: -6,
+      marginLeft: "0px",
+      width: "40px",
+      rotation: -45,
+      ease: Expo.easeInOut,
+      delay: -0.3,
+    })
+    t1.to(".menu", 1, {
+      top: "0%",
+      ease: Expo.easeInOut,
+      delay: -0.4,
+    })
+    t1.staggerFrom(
+      ".menu ul li",
+      0.4,
+      { x: window.innerWidth, opacity: 0, ease: Expo.easeOut },
+      0.1
+    )
+    t1.reverse()
+    t2.to("span", 0.6, { backgroundColor: "#111", ease: Expo.easeOut })
+    document.querySelector(".hamburger").addEventListener("click", function() {
+      t1.reversed(!t1.reversed())
+      if (window.scrollY >= whiteSection[0].offsetTop) {
+        t2.reversed(!t2.reversed())
       }
-    } else if (window.innerWidth <= 768) {
-      if (window.scrollY >= projects[0].offsetTop) {
-        hamburger[0].classList.add("hamburgerDark")
-      } else hamburger[0].classList.remove("hamburgerDark")
-    }
+    })
+    document.querySelectorAll(".navLink").forEach(a => {
+      a.addEventListener("click", function() {
+        t1.reversed(!t1.reversed())
+      })
+    })
+    document.addEventListener("scroll", function() {
+      if (window.scrollY >= whiteSection[0].offsetTop && t1.reversed()) {
+        t2.play()
+      } else {
+        t2.reverse()
+      }
+    })
   }
   render() {
     return (
-      <nav className="navbar">
-        <input className="menu-btn" type="checkbox" id="menu-btn" />
-        <label htmlFor="menu-btn" className="menu-icon">
-          <span className="menu-icon__line"></span>
-        </label>
-        <ul className="navlinks">
-          <li>Portfolio</li>
-          <li>Resume</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
+      <div>
+        <div className="hamburger">
+          <span className="one"></span>
+          <span className="two"></span>
+        </div>
+        <div className="menu">
+          <div className="data">
+            <ul>
+              <li>Navigation</li>
+              <li>
+                <a className="navLink" href="#Landing">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a className="navLink" href="#Projects">
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a className="navLink" href="#About">
+                  About
+                </a>
+              </li>
+              <li>
+                <a className="navLink" href="#Contact">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     )
   }
-}
-const styles = {
-  landingNav: {
-    position: "absolute",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    width: "100%",
-    top: "70%",
-    color: "white",
-    backgroundColor: "transparent",
-    zIndex: "3",
-  },
-  section1Nav: {
-    position: "fixed",
-    top: "0",
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    color: "black",
-    zIndex: "3",
-  },
-  section2Nav: {
-    backgroundColor: "rgba(0, 0, 0, 1)",
-    color: "white",
-    zIndex: "3",
-  },
 }
 
 export default navbar

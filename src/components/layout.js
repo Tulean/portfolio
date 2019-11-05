@@ -8,17 +8,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import "./layout.scss"
+import Nav from "../components/navbar"
 
 const Layout = ({ children }) => {
   return (
     <>
       <div>
+        <Nav />
         <main>{children}</main>
-        <footer>
-          ©{new Date().getFullYear()} Tuan Anh Le, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <footer>©{new Date().getFullYear()} Tuan Anh Le</footer>
       </div>
     </>
   )

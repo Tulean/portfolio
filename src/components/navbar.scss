@@ -1,184 +1,70 @@
-$break-xs: 576px;
-$break-sm: 768px;
-$break-m: 992px;
-$break-lg: 1200px;
-$break-xlg: 1920px;
-$break-xxlg: 2560px;
+.hamburger {
+  position: fixed;
+  margin: 1.4em;
+  width: 40px;
+  height: 12px;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+}
 
-//all screens
-.navbar {
+span.one {
   position: absolute;
-  .navlinks {
-    display: flex;
-    list-style: none;
-    transition: font-size 1s ease-in;
-  }
-  transition: background-color 0.3s ease-in;
+  width: 40px;
+  height: 2px;
+  background: #fff;
 }
 
-@media screen and (min-width: $break-xs) {
-  .navlinks {
-    font-size: 0.9rem;
-  }
+span.two {
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  margin-top: 12px;
+  margin-left: 10px;
 }
 
-@media screen and (max-width: ($break-sm - 1px)) {
-  .navbar {
-    top: 0;
-    padding: 0;
-    position: absolute;
-    background-color: transparent;
-    //hamburger icon
-    .menu-btn {
-      display: none;
-    }
-    .menu-icon {
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: 2;
-      cursor: pointer;
-      padding: 25px;
-      &__line {
-        display: block;
-        position: relative;
-        background: rgb(255, 255, 255);
-        height: 3px;
-        width: 30px;
-        border-radius: 5px;
-        &::before,
-        &::after {
-          content: "";
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          background: rgb(255, 255, 255);
-          border-radius: 5px;
-          transition: transform 0.3s ease;
-        }
-        &::before {
-          transform: translateY(-10px);
-        }
-        &::after {
-          transform: translateY(10px);
-        }
-      }
-      .hamburgerDark {
-        background: black;
-        &::before,
-        &::after {
-          background: black;
-        }
-      }
-    }
-    .navlinks {
-      flex-direction: column;
-      justify-content: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      text-align: center;
-      margin: auto;
-      height: 100vh;
-      width: 100%;
-      font-size: 1.5rem;
-      color: rgb(179, 179, 179);
-      li {
-        padding: 2.5vh;
-        transition: opacity 0.3s ease-in;
-        opacity: 0;
-        cursor: pointer;
-      }
-      li:hover {
-        color: white;
-      }
-    }
-
-    .menu-btn:checked ~ .menu-icon > span {
-      background: transparent !important;
-      transition: none;
-      &::before {
-        transform: rotate(45deg);
-        background: white !important;
-        transition: transform 0.3s ease;
-      }
-      &::after {
-        transform: rotate(-45deg);
-        background: white !important;
-        transition: transform 0.3s ease;
-      }
-    }
-    .menu-btn:checked ~ .navlinks {
-      background-color: rgba(0, 0, 0, 0.842);
-      li {
-        opacity: 1;
-      }
-    }
-  }
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+  position: fixed;
+  background: #101010f3;
+  height: 100vh;
+  width: 100%;
+  top: -100%;
 }
 
-@media screen and (min-width: $break-sm) {
-  .navbar {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    top: 70%;
-    color: white;
-    padding: 0;
-    .menu-btn {
-      display: none;
-    }
-    .menu-icon {
-      display: none;
-    }
-    .navlinks {
-      font-size: 1rem;
-      margin: 0;
-      width: 100%;
-      justify-content: center;
-      height: 70px;
-      li {
-        margin: auto 50px;
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      li:hover {
-        background-color: #ffffff3d;
-      }
-    }
-  }
+ul {
+  list-style: none;
+  margin: 0;
 }
 
-@media screen and (min-width: $break-m) {
-  .navbar {
-    .navlinks {
-      font-size: 1.1rem;
-    }
-  }
+li:first-child {
+  color: rgb(179, 179, 179);
+  font-family: Poppins;
+  font-size: 1.5rem;
 }
 
-@media screen and (min-width: $break-lg) {
-  .navbar {
-    .navlinks {
-      font-size: 1.3rem;
-    }
-  }
+li:not(:first-child) {
+  color: #fff;
+  font-size: 2.5rem;
 }
-@media screen and (min-width: $break-xlg) {
-  .navbar {
-    .navlinks {
-      font-size: 1.5rem;
-    }
-  }
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Poppins;
 }
-@media screen and (min-width: $break-xxlg) {
-  .navbar {
-    .navlinks {
-      font-size: 1.7rem;
-    }
-  }
+
+a:hover {
+  text-decoration: none;
+  color: #00ffff;
+}
+
+//scroll dark mode
+.darkMode {
+  background-color: #111 !important;
 }
