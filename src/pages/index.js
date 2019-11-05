@@ -257,6 +257,7 @@ const IndexPage = ({ data }) => (
               data-netlify="true"
               data-netlify-honeypot="bot-field"
             >
+              <input type="hidden" name="contact" value="Contact Form" />
               <Form.Control placeholder="Name*" name="name" type="text" />
               <Form.Control placeholder="Email*" name="email" type="email" />
               <Form.Control
