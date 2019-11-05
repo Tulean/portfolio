@@ -50,16 +50,23 @@ const IndexPage = ({ data }) => (
                 <a
                   href="https://www.linkedin.com/in/tulean/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="links"
                 >
                   LinkedIn
                 </a>
-                <a href={Resume} target="_blank" className="links">
+                <a
+                  href={Resume}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="links"
+                >
                   Resume
                 </a>
                 <a
                   href="https://github.com/Tulean"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="links"
                 >
                   GitHub
@@ -130,13 +137,18 @@ const IndexPage = ({ data }) => (
               <Col>
                 <Row>
                   <Col>
-                    <a href="https://adtractor.netlify.com" target="_blank">
+                    <a
+                      href="https://adtractor.netlify.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       AdTractor
                     </a>
                     <a
                       className="icon1"
                       href="https://github.com/Tulean/AdTractorClient"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FaGithub />
                     </a>
@@ -144,6 +156,7 @@ const IndexPage = ({ data }) => (
                       className="icon2"
                       href="https://adtractor.netlify.com"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FaGlobe />
                     </a>
@@ -172,6 +185,7 @@ const IndexPage = ({ data }) => (
                     <a
                       href="https://shoplift-supermarket.firebaseapp.com"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Shoplift
                     </a>
@@ -179,6 +193,7 @@ const IndexPage = ({ data }) => (
                       className="icon1"
                       href="https://github.com/brucelin1218/ShopLift"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FaGithub />
                     </a>
@@ -186,6 +201,7 @@ const IndexPage = ({ data }) => (
                       className="icon2"
                       href="https://shoplift-supermarket.firebaseapp.com/"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FaGlobe />
                     </a>
@@ -214,6 +230,7 @@ const IndexPage = ({ data }) => (
                     <a
                       href="https://emailyproject.herokuapp.com"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Emaily
                     </a>
@@ -221,6 +238,7 @@ const IndexPage = ({ data }) => (
                       className="icon1"
                       href="https://github.com/Tulean/Emaily"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FaGithub />
                     </a>
@@ -228,6 +246,7 @@ const IndexPage = ({ data }) => (
                       className="icon2"
                       href="https://emailyproject.herokuapp.com/"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FaGlobe />
                     </a>
