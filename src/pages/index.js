@@ -251,14 +251,9 @@ const IndexPage = ({ data }) => (
           <img src={cutOff2} alt="cutoff2" className="cutoff2" />
           <Container>
             <div className="Contact-title">Contact</div>
-            <Form
-              name="contact"
-              method="post"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-            >
-              <input type="hidden" name="bot-field" />
-              <input type="hidden" name="contact" value="contact" />
+            <Form name="contact" method="post" data-netlify="true">
+              <Form.Control type="hidden" name="bot-field" />
+              <Form.Control type="hidden" name="contact" value="contact" />
               <Form.Control placeholder="Name*" name="name" type="text" />
               <Form.Control placeholder="Email*" name="email" type="email" />
               <Form.Control
