@@ -253,22 +253,18 @@ const IndexPage = ({ data }) => (
             <div className="Contact-title">Contact</div>
             <Form
               name="contact"
-              method="POST"
+              method="post"
               data-netlify="true"
-              netlify-honeypot="bot-field"
+              data-netlify-honeypot="bot-field"
             >
-              <input type="hidden" name="contact" value="contact" />
               <Form.Control placeholder="Name*" name="name" type="text" />
-
               <Form.Control placeholder="Email*" name="email" type="email" />
-
               <Form.Control
                 as="textarea"
                 rows="4"
                 placeholder="Message*"
                 name="message"
               />
-
               <div
                 className="contact-btn-wrapper"
                 style={{ textAlign: "center" }}
