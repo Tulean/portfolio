@@ -149,6 +149,7 @@ const IndexPage = ({ data }) => (
                       href="https://github.com/Tulean/AdTractorClient"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="AdTractor Github Link"
                     >
                       <FaGithub />
                     </a>
@@ -157,6 +158,7 @@ const IndexPage = ({ data }) => (
                       href="https://adtractor.netlify.com"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="AdTractor Demo Link"
                     >
                       <FaGlobe />
                     </a>
@@ -194,6 +196,7 @@ const IndexPage = ({ data }) => (
                       href="https://github.com/brucelin1218/ShopLift"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Shoplift Github Link"
                     >
                       <FaGithub />
                     </a>
@@ -202,6 +205,7 @@ const IndexPage = ({ data }) => (
                       href="https://shoplift-supermarket.firebaseapp.com/"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Shoplift Demo Link"
                     >
                       <FaGlobe />
                     </a>
@@ -239,6 +243,7 @@ const IndexPage = ({ data }) => (
                       href="https://github.com/Tulean/Emaily"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Emaily Github Link"
                     >
                       <FaGithub />
                     </a>
@@ -247,6 +252,7 @@ const IndexPage = ({ data }) => (
                       href="https://emailyproject.herokuapp.com/"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Emaily Demo Link"
                     >
                       <FaGlobe />
                     </a>
@@ -277,14 +283,29 @@ const IndexPage = ({ data }) => (
               data-netlify-honeypot="bot-field"
             >
               <Form.Control type="hidden" name="form-name" value="contact" />
-              <Form.Control placeholder="Name*" name="name" type="text" />
-              <Form.Control placeholder="Email*" name="email" type="email" />
+
+              <Form.Control
+                aria-label="name"
+                placeholder="Name*"
+                name="name"
+                type="text"
+              />
+
+              <Form.Control
+                placeholder="Email*"
+                name="email"
+                type="email"
+                aria-label="email"
+              />
+
               <Form.Control
                 as="textarea"
                 rows="4"
                 placeholder="Message*"
                 name="message"
+                aria-label="message"
               />
+
               <div
                 className="contact-btn-wrapper"
                 style={{ textAlign: "center" }}
