@@ -8,7 +8,7 @@ import { Row, Col, Container, Form, Button } from "react-bootstrap"
 import cutOff1 from "../images/cutoff1.svg"
 import cutOff2 from "../images/cutoff2.svg"
 import { FaGithub, FaGlobe } from "react-icons/fa"
-import Resume from "../cv/cv.pdf"
+import Resume from "../cv/TuanAnhLeCV.pdf"
 
 const IndexPage = ({ data }) => (
   <Layout>
