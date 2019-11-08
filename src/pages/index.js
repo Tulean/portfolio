@@ -285,6 +285,7 @@ const IndexPage = ({ data }) => (
               <Form.Control type="hidden" name="form-name" value="contact" />
 
               <Form.Control
+                required
                 aria-label="name"
                 placeholder="Name*"
                 name="name"
@@ -292,6 +293,7 @@ const IndexPage = ({ data }) => (
               />
 
               <Form.Control
+                required
                 placeholder="Email*"
                 name="email"
                 type="email"
@@ -299,6 +301,7 @@ const IndexPage = ({ data }) => (
               />
 
               <Form.Control
+                required
                 as="textarea"
                 rows="4"
                 placeholder="Message*"
