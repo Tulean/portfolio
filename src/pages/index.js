@@ -37,11 +37,10 @@ const IndexPage = ({ data }) => (
           <Container>
             <Row>
               <Col className="about-description">
-                I’m a Software Engineer, my main specialization is Frontend;
-                however, I am actively improving my Backend skills. I am also
-                interested and learning about blockchain development as well as
-                game development in my free time. Learning aside, I am a regular
-                guy who has hobbies such as fermenting kombucha, watching latest
+                I’m a Software Engineer focused on Front End web development. 
+                I am using ReactJS (tied with TypeScript) as my framework of choice 
+                and for UI testing I use Enzyme, Jest, TestCafe, and Storybook libraries. 
+                Development aside, I am a regular guy who has hobbies such as fermenting kombucha, watching latest
                 anime, and trying new adventurous activities.
               </Col>
             </Row>
@@ -90,24 +89,16 @@ const IndexPage = ({ data }) => (
                   Frontend
                 </Col>
                 <Col>
-                  {" "}
-                  React.js, Redux, Bootstrap, Material UI, Materialize, Sass
+                  React.js, Redux, Bootstrap, Material UI, Materialize, Sass, Enzyme, TestCafe, Storybook, Jest, Backstop
                 </Col>
-              </Row>
-              <Row>
-                <Col className="skill" xs={12} sm={4}>
-                  Backend
-                </Col>
-                <Col>Node.js, MondoDB, MySQL, Express.js</Col>
               </Row>
               <Row>
                 <Col className="skill" xs={12} sm={4}>
                   Industry Knowledge
                 </Col>
                 <Col>
-                  {" "}
                   Data Structures and Algorithm, Object Oriented Concepts,
-                  DevOps (deploying to Heroku, Netlify)
+                  DevOps (deploying to Heroku, Netlify), Jira, Confluence
                 </Col>
               </Row>
               <Row>
@@ -115,7 +106,6 @@ const IndexPage = ({ data }) => (
                   Tools
                 </Col>
                 <Col>
-                  {" "}
                   Git, Adobe XD, Figma, Eclipse, Visual Studio Code, Slack,
                   Trello
                 </Col>
@@ -125,6 +115,48 @@ const IndexPage = ({ data }) => (
           <img src={cutOff1} alt="cutoff1" className="cutoff1" />
         </section>
         <section className="Projects" id="Projects">
+        <div className="projects-title">Experience</div>
+        <Container className="projects-description">
+        <Row>
+              <Col xs={12} sm={6} md={4}>
+                <Img
+                  fluid={data.job1.childImageSharp.fluid}
+                  alt="job1"
+                />
+              </Col>
+              <Col>
+                <Row>
+                  <Col>
+                    <a
+                      href="https://www.gooddata.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GoodData - 01/01/2020 - present
+                    </a>
+                    <a
+                      className="icon1"
+                      href="https://www.gooddata.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Company link"
+                    >
+                      <FaGlobe />
+                    </a>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                   Implemented features and ensured a smooth release of each feature with adequate test coverage. 
+                   Colaborated with QA testers to resolve bug issues. 
+                   Took part in daily syncs, weekly groomings, and communicated with coworkers from different timezones.
+                   Technologies used: React.js, Redux, Redux-saga, Context, TypeScript, Webpack, Enzyme, Jest, 
+                   TestCafe, Backstop.js, Jira, Confluence
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+        </Container>
           <div className="projects-title">Projects</div>
           <Container className="projects-description">
             <Row>
@@ -260,7 +292,6 @@ const IndexPage = ({ data }) => (
                 </Row>
                 <Row style={{ paddingBottom: "0" }}>
                   <Col>
-                    {" "}
                     Emaily is a full stack survey service that lets users send
                     out surveys to a massive amount of recipients for a certain
                     price. Emaily also collects and shows all responses to the
@@ -327,6 +358,13 @@ export default IndexPage
 export const query = graphql`
   query {
     Landing: file(relativePath: { eq: "Landing.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    job1: file(relativePath: { eq: "Job1.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
